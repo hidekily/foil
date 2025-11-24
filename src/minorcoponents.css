@@ -1,0 +1,43 @@
+.rin, .win, .gis, .nin{
+    background-color: red;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius:10px;
+    border:1px solid lime;
+
+    height: 65%;
+    width: 40%;
+}
+
+.rin{
+    background-image: url("./imgs//karina.jpg");
+}
+
+.win{
+    background-image: url("./imgs//winter.jpeg");
+}
+
+.nin{
+    background-image: url("./imgs/ning.jpg");
+}
+
+.gis{
+    background-image: url("./imgs//giselle.jpg");
+}
+
+.navbar:has(.k:hover){
+    border-bottom: 4px solid lightcoral;
+}
+.navbar:has(.w:hover){
+    border-bottom: 4px solid lightblue;
+
+}
+.navbar:has(.n:hover){
+    border-bottom: 4px solid lightpink;
+
+}
+.navbar:has(.g:hover){
+    border-bottom: 4px solid lightseagreen;
+}
