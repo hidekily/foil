@@ -14,13 +14,11 @@ export const Route = createRootRoute({
         >
           <Link to="/" className="home" activeProps={{className:"text-2xl"}}> Home </Link>
 
-          <Link to="/abt" className='ml-12 k' activeProps={{className:"text-2xl"}}> about </Link>
-
-          <Link to="/contact" className="w" activeProps={{className:"text-2xl"}}> contact </Link>
+          <Link to="/profile" className='ml-12 k' activeProps={{className:"text-2xl"}}> profile </Link>
 
           <Link to="/projects" className="n" activeProps={{className:"text-2xl"}}> projects </Link>
 
-          <Link to="/feedb" className="g" activeProps={{className:"text-2xl"}}> hbbs </Link>
+          <Link to="/feedback" className="g" activeProps={{className:"text-2xl"}}> feedback </Link>
         </nav>
       </div>
 

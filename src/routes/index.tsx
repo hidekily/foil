@@ -1,10 +1,10 @@
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
-  component: Index,
+  component: HomePage,
 })
 
-function Index() {
+function HomePage() {
   return (
     <>
       <div className="bg-neutral-800 flex flex-col h-[90vh]">

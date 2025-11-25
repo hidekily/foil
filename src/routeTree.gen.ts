@@ -10,9 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as FeedbRouteImport } from './routes/feedb'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AbtRouteImport } from './routes/abt'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -20,19 +19,14 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FeedbRoute = FeedbRouteImport.update({
-  id: '/feedb',
-  path: '/feedb',
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AbtRoute = AbtRouteImport.update({
-  id: '/abt',
-  path: '/abt',
+const FeedbackRoute = FeedbackRouteImport.update({
+  id: '/feedback',
+  path: '/feedback',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,39 +37,35 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/abt': typeof AbtRoute
-  '/contact': typeof ContactRoute
-  '/feedb': typeof FeedbRoute
+  '/feedback': typeof FeedbackRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/abt': typeof AbtRoute
-  '/contact': typeof ContactRoute
-  '/feedb': typeof FeedbRoute
+  '/feedback': typeof FeedbackRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/abt': typeof AbtRoute
-  '/contact': typeof ContactRoute
-  '/feedb': typeof FeedbRoute
+  '/feedback': typeof FeedbackRoute
+  '/profile': typeof ProfileRoute
   '/projects': typeof ProjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/abt' | '/contact' | '/feedb' | '/projects'
+  fullPaths: '/' | '/feedback' | '/profile' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/abt' | '/contact' | '/feedb' | '/projects'
-  id: '__root__' | '/' | '/abt' | '/contact' | '/feedb' | '/projects'
+  to: '/' | '/feedback' | '/profile' | '/projects'
+  id: '__root__' | '/' | '/feedback' | '/profile' | '/projects'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AbtRoute: typeof AbtRoute
-  ContactRoute: typeof ContactRoute
-  FeedbRoute: typeof FeedbRoute
+  FeedbackRoute: typeof FeedbackRoute
+  ProfileRoute: typeof ProfileRoute
   ProjectsRoute: typeof ProjectsRoute
 }
 
@@ -88,25 +78,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/feedb': {
-      id: '/feedb'
-      path: '/feedb'
-      fullPath: '/feedb'
-      preLoaderRoute: typeof FeedbRouteImport
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/abt': {
-      id: '/abt'
-      path: '/abt'
-      fullPath: '/abt'
-      preLoaderRoute: typeof AbtRouteImport
+    '/feedback': {
+      id: '/feedback'
+      path: '/feedback'
+      fullPath: '/feedback'
+      preLoaderRoute: typeof FeedbackRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -121,9 +104,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AbtRoute: AbtRoute,
-  ContactRoute: ContactRoute,
-  FeedbRoute: FeedbRoute,
+  FeedbackRoute: FeedbackRoute,
+  ProfileRoute: ProfileRoute,
   ProjectsRoute: ProjectsRoute,
 }
 export const routeTree = rootRouteImport
