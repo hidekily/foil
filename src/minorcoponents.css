@@ -1,5 +1,5 @@
 :root{
-    --color-text-sky-600: oklch(58.8% 0.158 241.966);
+    --color-text-sky-600: oklch(65.839% 0.18411 41.799);
 }
 
 .rin, .win, .gis, .nin{
@@ -37,11 +37,13 @@
     justify-content: center;
     height: 100%;
     width: 33.33%;
+
+    text-align: center;
 }
 
 .section-title{
+    text-align: center;
     height: 10%;
-    margin-top: 4%;
     font-size: xx-large;
     color: var(--color-text-sky-600);
 }
