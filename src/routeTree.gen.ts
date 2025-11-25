@@ -9,30 +9,30 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WRouteImport } from './routes/w'
-import { Route as NRouteImport } from './routes/n'
-import { Route as KRouteImport } from './routes/k'
-import { Route as GRouteImport } from './routes/g'
+import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as FeedbRouteImport } from './routes/feedb'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AbtRouteImport } from './routes/abt'
 import { Route as IndexRouteImport } from './routes/index'
 
-const WRoute = WRouteImport.update({
-  id: '/w',
-  path: '/w',
+const ProjectsRoute = ProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NRoute = NRouteImport.update({
-  id: '/n',
-  path: '/n',
+const FeedbRoute = FeedbRouteImport.update({
+  id: '/feedb',
+  path: '/feedb',
   getParentRoute: () => rootRouteImport,
 } as any)
-const KRoute = KRouteImport.update({
-  id: '/k',
-  path: '/k',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GRoute = GRouteImport.update({
-  id: '/g',
-  path: '/g',
+const AbtRoute = AbtRouteImport.update({
+  id: '/abt',
+  path: '/abt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -43,70 +43,70 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/g': typeof GRoute
-  '/k': typeof KRoute
-  '/n': typeof NRoute
-  '/w': typeof WRoute
+  '/abt': typeof AbtRoute
+  '/contact': typeof ContactRoute
+  '/feedb': typeof FeedbRoute
+  '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/g': typeof GRoute
-  '/k': typeof KRoute
-  '/n': typeof NRoute
-  '/w': typeof WRoute
+  '/abt': typeof AbtRoute
+  '/contact': typeof ContactRoute
+  '/feedb': typeof FeedbRoute
+  '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/g': typeof GRoute
-  '/k': typeof KRoute
-  '/n': typeof NRoute
-  '/w': typeof WRoute
+  '/abt': typeof AbtRoute
+  '/contact': typeof ContactRoute
+  '/feedb': typeof FeedbRoute
+  '/projects': typeof ProjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/g' | '/k' | '/n' | '/w'
+  fullPaths: '/' | '/abt' | '/contact' | '/feedb' | '/projects'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/g' | '/k' | '/n' | '/w'
-  id: '__root__' | '/' | '/g' | '/k' | '/n' | '/w'
+  to: '/' | '/abt' | '/contact' | '/feedb' | '/projects'
+  id: '__root__' | '/' | '/abt' | '/contact' | '/feedb' | '/projects'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  GRoute: typeof GRoute
-  KRoute: typeof KRoute
-  NRoute: typeof NRoute
-  WRoute: typeof WRoute
+  AbtRoute: typeof AbtRoute
+  ContactRoute: typeof ContactRoute
+  FeedbRoute: typeof FeedbRoute
+  ProjectsRoute: typeof ProjectsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/w': {
-      id: '/w'
-      path: '/w'
-      fullPath: '/w'
-      preLoaderRoute: typeof WRouteImport
+    '/projects': {
+      id: '/projects'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/n': {
-      id: '/n'
-      path: '/n'
-      fullPath: '/n'
-      preLoaderRoute: typeof NRouteImport
+    '/feedb': {
+      id: '/feedb'
+      path: '/feedb'
+      fullPath: '/feedb'
+      preLoaderRoute: typeof FeedbRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/k': {
-      id: '/k'
-      path: '/k'
-      fullPath: '/k'
-      preLoaderRoute: typeof KRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/g': {
-      id: '/g'
-      path: '/g'
-      fullPath: '/g'
-      preLoaderRoute: typeof GRouteImport
+    '/abt': {
+      id: '/abt'
+      path: '/abt'
+      fullPath: '/abt'
+      preLoaderRoute: typeof AbtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -121,10 +121,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  GRoute: GRoute,
-  KRoute: KRoute,
-  NRoute: NRoute,
-  WRoute: WRoute,
+  AbtRoute: AbtRoute,
+  ContactRoute: ContactRoute,
+  FeedbRoute: FeedbRoute,
+  ProjectsRoute: ProjectsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

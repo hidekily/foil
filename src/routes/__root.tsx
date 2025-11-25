@@ -5,35 +5,26 @@ export const Route = createRootRoute({
 
   component: () => (
     <>
+
+    {/* div section for header part of our application */}
       <div className="flex-row h-[10vh] bg-zinc-900 justify-items-center">
         <nav className="
               flex flex-row justify-start items-center gap-10
               h-full w-[80%] text-xl font-medium text-sky-600 border-b-4 border-lime-200 navbar"
         >
-          <Link to="/" className="home" activeProps={{className:"text-2xl"}}>
-            Home
-          </Link>
+          <Link to="/" className="home" activeProps={{className:"text-2xl"}}> Home </Link>
 
-          <Link to="/k" className='ml-12 k' activeProps={{className:"text-2xl"}}>
-            karina
-          </Link>
+          <Link to="/abt" className='ml-12 k' activeProps={{className:"text-2xl"}}> about </Link>
 
-          <Link to="/w" className="w" activeProps={{className:"text-2xl"}}>
-            winter
-          </Link>
+          <Link to="/contact" className="w" activeProps={{className:"text-2xl"}}> contact </Link>
 
-          <Link to="/n" className="n" activeProps={{className:"text-2xl"}}>
-            ningning
-          </Link>
+          <Link to="/projects" className="n" activeProps={{className:"text-2xl"}}> projects </Link>
 
-          <Link to="/g" className="g" activeProps={{className:"text-2xl"}}>
-            giselle
-          </Link>
+          <Link to="/feedb" className="g" activeProps={{className:"text-2xl"}}> hbbs </Link>
         </nav>
       </div>
 
-      <hr />
-
+      {/* rest of our content uploading content from routes */}
       <div>
         <Outlet />
       </div>

@@ -1,3 +1,7 @@
+:root{
+    --color-text-sky-600: oklch(58.8% 0.158 241.966);
+}
+
 .rin, .win, .gis, .nin{
     background-color: red;
     background-position: center;
@@ -9,22 +13,6 @@
 
     height: 65%;
     width: 40%;
-}
-
-.rin{
-    background-image: url("./imgs//karina.jpg");
-}
-
-.win{
-    background-image: url("./imgs//winter.jpeg");
-}
-
-.nin{
-    background-image: url("./imgs/ning.jpg");
-}
-
-.gis{
-    background-image: url("./imgs//giselle.jpg");
 }
 
 .navbar:has(.k:hover){
@@ -40,4 +28,28 @@
 }
 .navbar:has(.g:hover){
     border-bottom: 4px solid lightseagreen;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 33.33%;
+}
+
+.section-title{
+    height: 10%;
+    margin-top: 4%;
+    font-size: xx-large;
+    color: var(--color-text-sky-600);
+}
+
+.section-content{
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-sky-600);
 }
