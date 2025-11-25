@@ -10,7 +10,8 @@ export const skills: SectionData = {
     "Tanstack Query & Router",
     "Drizzle ORM & SQLite",
     "Tailwind CSS",
-    "fastify"
+    "fastify",
+    "Zod"
    
   ]
 }

@@ -9,16 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as FeedbackRouteImport } from './routes/feedback'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -39,45 +33,34 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/feedback': typeof FeedbackRoute
   '/profile': typeof ProfileRoute
-  '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/feedback': typeof FeedbackRoute
   '/profile': typeof ProfileRoute
-  '/projects': typeof ProjectsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/feedback': typeof FeedbackRoute
   '/profile': typeof ProfileRoute
-  '/projects': typeof ProjectsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/feedback' | '/profile' | '/projects'
+  fullPaths: '/' | '/feedback' | '/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/feedback' | '/profile' | '/projects'
-  id: '__root__' | '/' | '/feedback' | '/profile' | '/projects'
+  to: '/' | '/feedback' | '/profile'
+  id: '__root__' | '/' | '/feedback' | '/profile'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FeedbackRoute: typeof FeedbackRoute
   ProfileRoute: typeof ProfileRoute
-  ProjectsRoute: typeof ProjectsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/profile': {
       id: '/profile'
       path: '/profile'
@@ -106,7 +89,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FeedbackRoute: FeedbackRoute,
   ProfileRoute: ProfileRoute,
-  ProjectsRoute: ProjectsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

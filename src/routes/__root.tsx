@@ -14,11 +14,9 @@ export const Route = createRootRoute({
         >
           <Link to="/" className="home" activeProps={{className:"text-2xl"}}> Home </Link>
 
-          <Link to="/profile" className='ml-12 k' activeProps={{className:"text-2xl"}}> profile </Link>
+          <Link to="/profile" className='ml-12 k-profile' activeProps={{className:"text-2xl"}}> profile </Link>
 
-          <Link to="/projects" className="n" activeProps={{className:"text-2xl"}}> projects </Link>
-
-          <Link to="/feedback" className="g" activeProps={{className:"text-2xl"}}> feedback </Link>
+          <Link to="/feedback" className="k-feedback" activeProps={{className:"text-2xl"}}> feedback </Link>
         </nav>
       </div>
 
