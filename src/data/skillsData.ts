@@ -1,14 +1,29 @@
-export const skills: SkillsSectionData = {
-  items: [
-    "React & TypeScript",
-    "Tailwind CSS",
-    "Tanstack Query & Router",
-    "Drizzle ORM & SQLite",
-    "fastify & docker",
-    "Zod"
-    ]
+export interface LearningSectionData {
+    items: string[]
+    state: (
+        'Learning' |
+        'Learned' |
+        'Learned Fundamentals' |
+        'Will Learn Soon'
+    )[]
 }
 
-export interface SkillsSectionData {
-  items: string[]
+export const learning: LearningSectionData = {
+  items: [
+    "Tanstack Router",
+    "React",
+    "Drizzle ORM",
+    "Docker",
+    "Zod & Fastify",
+    "TypeScript Advanced",
+    "better-auth"
+  ],
+  state: [
+    'Learning' ,
+    'Learned Fundamentals',
+    'Learning',
+    'Learning',
+    'Learning',
+    'Learned Fundamentals'
+]
 }

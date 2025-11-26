@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "run --biome format .",
+    "lint": "run --biome lint .",
+    "check": "run --biome check ."
   },
   "dependencies": {
     "@tanstack/react-router": "^1.132.0",
