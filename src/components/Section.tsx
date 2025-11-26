@@ -46,8 +46,11 @@ export function Section({ titulo, items }: SectionProps) {
 
   return (
     <div className="main-container">
-      <div className="w-[90%] h-[85%] bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg p-6 m-4 flex flex-col items-start justify-start shadow-xl border border-zinc-600 hover:border-sky-500 transition-all duration-300 hover:scale-102">
-        <div className="w-full flex items-center gap-3 mb-4 pb-3 border-b border-zinc-600">
+      <div className="w-[90%] h-[85%] bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg p-6 m-4
+                      flex flex-col items-start justify-start shadow-xl border border-zinc-600 hover:border-sky-500
+                      transition-all duration-300 hover:scale-102"
+      >
+        <div className="w-full flex items-center gap-3 mb-4 pb-3 border-b border-rose-600">
           <h2 className="text-2xl font-bold text-rose-500">{titulo}</h2>
         </div>
         <ul className='w-full space-y-3 flex flex-col items-start justify-start'>
