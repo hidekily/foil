@@ -1,6 +1,11 @@
+export interface SectionItem {
+  text: string
+  link?: string
+}
+
 export interface SectionData {
   titulo: string
-  items: string[]
+  items: (string | SectionItem)[]
 }
 
 export const skills: SectionData = {
@@ -12,7 +17,6 @@ export const skills: SectionData = {
     "Tailwind CSS",
     "fastify",
     "Zod"
-   
   ]
 }
 
@@ -27,15 +31,19 @@ export const languages: SectionData = {
 export const contact: SectionData = {
   titulo: "contact",
   items: [
-    "GITHUB: github.com/hidekily",
-    "EMAIL: murilotaue1@gmail.com",
-    "LINKEDIN: linkedin.com/in/murilo-taue/"
+    {
+      text: "GITHUB: github.com/hidekily",
+      link: "https://github.com/hidekily"
+    },
+    {
+      text: "EMAIL: murilotaue1@gmail.com",
+      link: "mailto:murilotaue1@gmail.com"
+    },
+    {
+      text: "LINKEDIN: linkedin.com/in/murilo-taue/",
+      link: "https://linkedin.com/in/murilo-taue/"
+    }
   ]
 }
 
-// Array com todas as sections (para usar com .map)
-export const allSections: SectionData[] = [
-  skills,
-  languages,
-  contact
-]
+export const allSections: SectionData[] = [skills, languages, contact]
